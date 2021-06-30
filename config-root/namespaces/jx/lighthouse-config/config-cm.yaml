@@ -7,6 +7,7 @@ data:
       LinkURL: null
     in_repo_config:
       enabled:
+        highb/jx3-jenkins-quickstart: true
         highb/jx3-minicube: true
     plank: {}
     pod_namespace: jx
@@ -19,6 +20,7 @@ data:
         required-if-present-contexts: null
         skip-unknown-contexts: false
       merge_method:
+        highb/jx3-jenkins-quickstart: merge
         highb/jx3-minicube: merge
       queries:
       - labels:
@@ -31,6 +33,7 @@ data:
         - needs-rebase
         repos:
         - highb/jx3-minicube
+        - highb/jx3-jenkins-quickstart
       - labels:
         - updatebot
         missingLabels:
@@ -41,7 +44,8 @@ data:
         - needs-rebase
         repos:
         - highb/jx3-minicube
-      target_url: http://lighthouse-jx.192.168.64.12.nip.io/merge/status
+        - highb/jx3-jenkins-quickstart
+      target_url: http://lighthouse-jx.192.168.64.13.nip.io/merge/status
 kind: ConfigMap
 metadata:
   creationTimestamp: null

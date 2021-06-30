@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: highb
+    provider: github
+    repository: jx3-jenkins-quickstart
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: highb-jx3-jenkins-quickstart
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/highb/jx3-jenkins-quickstart.git
+  org: highb
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: jx3-jenkins-quickstart
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/highb/jx3-jenkins-quickstart

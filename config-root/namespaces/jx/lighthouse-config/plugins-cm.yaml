@@ -6,6 +6,10 @@ data:
       repos:
       - highb/jx3-minicube
       require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - highb/jx3-jenkins-quickstart
+      require_self_approval: true
     cat: {}
     cherry_pick_unapproved: {}
     config_updater:
@@ -16,6 +20,11 @@ data:
         env/prow/plugins.yaml:
           name: plugins
     external_plugins:
+      highb/jx3-jenkins-quickstart:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
       highb/jx3-minicube:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
@@ -26,6 +35,22 @@ data:
       additional_labels: null
     owners: {}
     plugins:
+      highb/jx3-jenkins-quickstart:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
       highb/jx3-minicube:
       - config-updater
       - approve
@@ -55,6 +80,11 @@ data:
     - repos:
       - highb/jx3-minicube
       trusted_org: todo
+    - repos:
+      - highb/jx3-jenkins-quickstart
+      trusted_org: todo
+    welcome:
+    - message_template: Welcome
 kind: ConfigMap
 metadata:
   creationTimestamp: null
