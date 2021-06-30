@@ -10,6 +10,14 @@ spec:
     repositories:
     - name: jx3-jenkins-quickstart
     scheduler: in-repo
+  jenkinsServers:
+  - groups:
+    - owner: highb
+      provider: https://github.com
+      providerKind: github
+      repositories:
+      - name: jx3-app
+    server: jenkins-in-a-box
   slack:
     channel: '#jenkins-x-pipelines'
     kind: failureOrNextSuccess
